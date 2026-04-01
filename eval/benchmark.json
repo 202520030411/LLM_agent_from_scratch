@@ -1,0 +1,142 @@
+[
+  {
+    "id": 1,
+    "category": "calculator",
+    "question": "If the US imposes a 25% tariff on $500 billion of Chinese goods, how much extra cost does that add in dollars?",
+    "expected": "125000000000",
+    "scoring": "exact"
+  },
+  {
+    "id": 2,
+    "category": "calculator",
+    "question": "Russia's GDP is about $2.2 trillion and Ukraine's is about $160 billion. How many times larger is Russia's economy?",
+    "expected": "13.75",
+    "scoring": "exact"
+  },
+  {
+    "id": 3,
+    "category": "calculator",
+    "question": "NATO requires member countries to spend 2% of GDP on defence. If a country has a GDP of $800 billion, what is their required defence budget in billions?",
+    "expected": "16",
+    "scoring": "exact"
+  },
+  {
+    "id": 4,
+    "category": "calculator",
+    "question": "If inflation is at 8% and your salary is $60,000, how much would you need to earn next year just to keep the same purchasing power?",
+    "expected": "64800",
+    "scoring": "exact"
+  },
+  {
+    "id": 5,
+    "category": "calculator",
+    "question": "The US national debt is about $34 trillion and the US population is about 335 million people. What is the debt per person?",
+    "expected": "101492",
+    "scoring": "exact"
+  },
+  {
+    "id": 6,
+    "category": "calculator",
+    "question": "If oil is priced at $85 per barrel and a country imports 3 million barrels per day, what is their annual oil import bill in billions of dollars?",
+    "expected": "93.075",
+    "scoring": "exact"
+  },
+  {
+    "id": 7,
+    "category": "calculator",
+    "question": "The UN says 2 billion people lack access to safe drinking water. The world population is 8 billion. What percentage is that?",
+    "expected": "25",
+    "scoring": "exact"
+  },
+  {
+    "id": 8,
+    "category": "wikipedia",
+    "question": "What is NATO and when was it founded?",
+    "expected": "NATO is the North Atlantic Treaty Organization, a military alliance founded in 1949",
+    "scoring": "llm_judge"
+  },
+  {
+    "id": 9,
+    "category": "wikipedia",
+    "question": "What is the background of the Israel-Palestine conflict?",
+    "expected": "The conflict involves competing claims to land between Israelis and Palestinians, with roots going back to the late 19th century and the 1948 Arab-Israeli War",
+    "scoring": "llm_judge"
+  },
+  {
+    "id": 10,
+    "category": "wikipedia",
+    "question": "What is the World Trade Organization and what does it do?",
+    "expected": "The WTO is an international organisation that regulates global trade between nations",
+    "scoring": "llm_judge"
+  },
+  {
+    "id": 11,
+    "category": "wikipedia",
+    "question": "What is the history of US-China trade relations?",
+    "expected": "US-China trade relations have evolved over decades, with China joining the WTO in 2001 and trade tensions escalating significantly under the Trump administration with tariffs",
+    "scoring": "llm_judge"
+  },
+  {
+    "id": 12,
+    "category": "wikipedia",
+    "question": "What is the International Monetary Fund (IMF)?",
+    "expected": "The IMF is an international financial institution that promotes global monetary cooperation and provides loans to countries in financial difficulty",
+    "scoring": "llm_judge"
+  },
+  {
+    "id": 13,
+    "category": "wikipedia",
+    "question": "What is the background of the Russia-Ukraine conflict?",
+    "expected": "The conflict has roots in Ukraine's post-Soviet independence, the 2014 Euromaidan revolution, Russia's annexation of Crimea, and escalated to a full-scale invasion by Russia in February 2022",
+    "scoring": "llm_judge"
+  },
+  {
+    "id": 14,
+    "category": "wikipedia",
+    "question": "What is OPEC and what role does it play in oil prices?",
+    "expected": "OPEC is the Organization of the Petroleum Exporting Countries, a cartel that coordinates oil production levels among member states to influence global oil prices",
+    "scoring": "llm_judge"
+  },
+  {
+    "id": 15,
+    "category": "web_search",
+    "question": "What are the latest US tariffs on Chinese goods in 2025?",
+    "expected": "The US has imposed significant tariffs on Chinese goods, with rates escalating under trade war tensions",
+    "scoring": "llm_judge"
+  },
+  {
+    "id": 16,
+    "category": "web_search",
+    "question": "What is the current status of the Russia-Ukraine war?",
+    "expected": "The war is ongoing with continued fighting, international aid to Ukraine, and ongoing diplomatic efforts",
+    "scoring": "llm_judge"
+  },
+  {
+    "id": 17,
+    "category": "web_search",
+    "question": "What AI regulation laws are being discussed or passed in 2025?",
+    "expected": "The EU AI Act has come into force and various countries including the US are developing AI governance frameworks",
+    "scoring": "llm_judge"
+  },
+  {
+    "id": 18,
+    "category": "web_search",
+    "question": "What is the current global inflation situation?",
+    "expected": "Global inflation has moderated from its 2022 peak but remains a concern in many countries, with central banks having raised interest rates",
+    "scoring": "llm_judge"
+  },
+  {
+    "id": 19,
+    "category": "web_search",
+    "question": "What are the latest developments in the Middle East conflict?",
+    "expected": "The conflict involves ongoing fighting in Gaza, with international diplomatic efforts and humanitarian concerns",
+    "scoring": "llm_judge"
+  },
+  {
+    "id": 20,
+    "category": "web_search",
+    "question": "What is happening with climate change policy internationally in 2025?",
+    "expected": "Countries are working toward climate targets set in the Paris Agreement, with ongoing negotiations and some countries revising their commitments",
+    "scoring": "llm_judge"
+  }
+]
