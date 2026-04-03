@@ -112,16 +112,17 @@ python3 eval/run_eval.py --output eval/results.json
 
 ## Evaluation Results
 
-Benchmark: 20 news-themed questions across 3 categories. Math uses exact match scoring; factual and web questions use LLM-as-judge scoring.
+### Agent vs. No-Agent — TriviaQA (100 questions)
 
-| Category | Accuracy | Questions |
+Evaluation on the public [TriviaQA](https://huggingface.co/datasets/trivia_qa) dataset (validation set). Each question was run twice — once with the agent (tools enabled) and once with a plain LLM call (no tools). Scoring uses the standard TriviaQA "answer-in-prediction" metric: a response is correct if any accepted answer string appears in the normalised prediction.
+
+| Metric | No-Agent (plain LLM) | Agent (with tools) |
 |---|---|---|
-| Calculator | **100%** | 7/7 |
-| Web Search | **83%** | 5/6 |
-| Wikipedia | **71%** | 5/7 |
-| **Overall** | **85%** | **17/20** |
+| **Accuracy** | 77% | **83%** |
+| Correct answers | 77 / 100 | 83 / 100 |
+| Avg tool calls | — | 1.0 |
+| Crashes / errors | 0 | 0 |
 
-**Avg tool calls per query:** 0.8  
-**Failures (errors/crashes):** 0/20
+**Agent improvement: +6% over bare LLM**
 
-The 3 misses were LLM judge false negatives on technically correct answers. Raw results are saved in `eval/results.json`.
+The agent correctly answered 6 additional questions that the plain LLM got wrong by using Wikipedia or web search to look up the answer. Full results are in `eval/triviaqa_results.json`.
