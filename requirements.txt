@@ -3,3 +3,4 @@ ddgs>=0.1.0
 wikipedia-api>=0.6.0
 gradio>=4.0.0
 python-dotenv>=1.0.0
+datasets>=2.0.0
