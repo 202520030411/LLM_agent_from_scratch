@@ -31,7 +31,7 @@ A `Reason + Act` loop written entirely from scratch:
 
 | Tool | Role |
 |---|---|
-| `web_search` | Find **current news** — latest headlines, recent events, up-to-date facts |
+| `web_search` | Find **current news** — real-time results via Tavily Search API |
 | `wikipedia_lookup` | Retrieve **historical background** — key players, origins, context |
 | `calculator` | Crunch **numbers in the news** — tariff costs, GDP comparisons, percentages |
 
@@ -64,15 +64,21 @@ LLM_agent_from_scratch/
 │   ├── llm.py            # LLM API wrapper (Groq via OpenAI-compatible API)
 │   └── tools/
 │       ├── __init__.py   # Tool registry + dispatch
-│       ├── search.py     # DuckDuckGo web search
+│       ├── search.py     # Tavily real-time web search
 │       ├── calculator.py # Safe AST-based math evaluator
 │       └── wikipedia.py  # Wikipedia article fetcher
 ├── ui/
 │   └── app.py            # Gradio 6 chat UI
 ├── eval/
-│   ├── benchmark.json    # 20 news-themed questions + expected answers
-│   ├── run_eval.py       # Evaluation harness
-│   └── results.json      # Latest eval run output
+│   ├── benchmark.json        # 20 news-themed questions + expected answers
+│   ├── run_eval.py           # Evaluation harness
+│   ├── triviaqa_eval.py      # Agent vs no-agent on TriviaQA (100 questions)
+│   ├── results.json          # News benchmark results
+│   └── triviaqa_results.json # TriviaQA eval results
+├── presentation/
+│   ├── slides.tex            # Beamer LaTeX slides
+│   ├── slides.pdf            # Compiled presentation
+│   └── plot_eval.py          # Generates eval bar chart (matplotlib)
 ├── .env.example          # API key template
 ├── requirements.txt
 └── README.md
@@ -83,10 +89,11 @@ LLM_agent_from_scratch/
 ## Design Decisions
 
 - **LLM**: `qwen/qwen3-32b` via Groq's free OpenAI-compatible API — fast, strong tool-calling, no cost
+- **Web search**: Tavily Search API — purpose-built for LLM agents, real-time results with published dates
 - **Tool format**: OpenAI JSON Schema function-calling — works with any OpenAI-compatible endpoint
 - **Agent loop**: Custom ReAct (Reason + Act), max 10 iterations, with `BadRequestError` guard
 - **UI**: Gradio 6 — minimal setup, clean bubble layout, collapsible tool traces
-- **Eval scoring**: Exact numeric match for calculator; LLM-as-judge for news/factual questions
+- **Eval scoring**: Agent vs. no-agent comparison on TriviaQA (100 questions), answer-in-prediction metric
 
 ---
 
@@ -96,16 +103,18 @@ LLM_agent_from_scratch/
 # Install dependencies
 python3 -m pip install -r requirements.txt --break-system-packages
 
-# Copy the env template and add your Groq API key
+# Copy the env template and fill in your keys
 cp .env.example .env
-# edit .env and set: GROQ_API_KEY=your_key_here
+# edit .env and set:
+#   GROQ_API_KEY=your_groq_key
+#   TAVILY_API_KEY=your_tavily_key
 
 # Launch the UI
 python3 ui/app.py
 # Open http://127.0.0.1:7860 in your browser
 
-# Run evaluation
-python3 eval/run_eval.py --output eval/results.json
+# Run evaluation (agent vs no-agent on TriviaQA)
+python3 eval/triviaqa_eval.py --n 100 --output eval/triviaqa_results.json
 ```
 
 ---
