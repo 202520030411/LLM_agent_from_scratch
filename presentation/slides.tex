@@ -151,7 +151,7 @@
       \toprule
       \textbf{Tool} & \textbf{Source} & \textbf{Role} \\
       \midrule
-      \texttt{web\_search} & DuckDuckGo & Latest headlines \& current facts \\[4pt]
+      \texttt{web\_search} & Tavily Search API & Real-time news, published dates \\[4pt]
       \texttt{wikipedia\_lookup} & Wikipedia REST API & Historical background \& context \\[4pt]
       \texttt{calculator} & Python AST (safe eval) & Tariffs, GDP ratios, percentages \\
       \bottomrule
@@ -160,7 +160,7 @@
   \vspace{0.4cm}
   \textbf{Example — US-China Trade War:}
   \begin{enumerate}
-    \item \texttt{web\_search("US China tariffs 2025")} $\rightarrow$ latest headlines
+      \item \texttt{web\_search("US China tariffs 2026")} $\rightarrow$ latest headlines
     \item \texttt{wikipedia\_lookup("China–United States trade war")} $\rightarrow$ history
     \item \texttt{calculator("500000000000 * 0.145")} $\rightarrow$ \$72.5B cost
   \end{enumerate}
@@ -222,8 +222,8 @@
       \textbf{Decision} & \textbf{Rationale} \\
       \midrule
       Groq + Qwen3-32B & Free tier, fast inference, strong tool calling \\[4pt]
+      Tavily Search API & Purpose-built for LLM agents, real-time results \\[4pt]
       OpenAI-compatible API & Keeps tool schemas provider-agnostic \\[4pt]
-      DuckDuckGo search & No API key required, no rate-limit costs \\[4pt]
       Wikipedia REST API & Structured, reliable, always available \\[4pt]
       Safe AST calculator & No \texttt{eval()} security risk \\[4pt]
       Gradio 6 UI & Minimal setup, collapsible tool traces \\
